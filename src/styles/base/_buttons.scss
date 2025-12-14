@@ -1,0 +1,15 @@
+.btn {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    padding: 16px 18px;
+    border-radius: 40px;
+    background-color: $orange;
+    color: $white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken($orange, 10%);
+    }
+}
