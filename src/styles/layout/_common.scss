@@ -232,14 +232,12 @@
         p {
             max-width: 1002px;
             width: 100%;
-
             color: $green-light;
             font-weight: 500;
             @include adaptive-value("font-size", 40, 24, 1);
             line-height: calc(48 / 40);
 
-            strong,
-            span {
+            strong {
                 color: $green;
                 font-weight: inherit;
             }
@@ -381,6 +379,112 @@
 
                 }
             }
+        }
+    }
+}
+
+.about-us {
+    @include adaptive-value("padding-top", 50, 50, 1);
+    @include adaptive-value("padding-bottom", 50, 15, 1);
+    overflow: hidden;
+
+    &_heading {
+        display: flex;
+        align-items: center;
+        justify-content:
+            flex-start;
+        @include adaptive-value("gap", 56, 16, 1);
+        @include adaptive-value("margin-bottom", 96, 60, 1);
+        width: 100%;
+
+        h2,
+        span.section-title {
+            color: #D9E3E2;
+            @include adaptive-value("font-size", 140, 48, 1);
+            white-space: nowrap;
+        }
+
+        &-image{
+            @include adaptive-value("width", 120, 60, 1);
+            @include adaptive-value("height", 120, 60, 1);
+        }
+    }
+
+    &_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    &_text {
+        max-width: 775px;
+        width: 100%;
+        color: $green;
+        font-weight: 500;
+        @include adaptive-value("font-size", 40, 24, 1);
+        line-height: calc(48 / 40);
+
+        @include media ("<desktop") {
+            max-width: 100%;
+        }
+
+        strong {
+            color: $green-light;
+            font-weight: inherit;
+        }
+    }
+
+    &_labels {
+        display: flex;
+        flex-direction: column;
+        @include adaptive-value("gap", 64, 32, 1);
+        max-width: 430px;
+        width: 100%;
+
+        @include media ("<desktop") {
+            max-width: 100%;
+        }
+    }
+
+    &_label {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        &-image {
+            @include adaptive-value("min-width", 80, 60, 1);
+            @include adaptive-value("min-width", 80, 60, 1);
+            @include adaptive-value("height", 80, 60, 1);
+            @include adaptive-value("height", 80, 60, 1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $green;
+
+            img {
+                width: 55%;
+                height: 55%;
+            }
+        }
+
+        strong {
+            color: $orange;
+            font-weight: 500;
+            @include adaptive-value("font-size", 24, 18, 1);
+            line-height: calc(28 / 24);
+            @include adaptive-value("margin-bottom", 8, 4, 1);
+        }
+
+        p {
+            @include adaptive-value("font-size", 20, 16, 1);
+            line-height: calc(28 / 20);
         }
     }
 }
