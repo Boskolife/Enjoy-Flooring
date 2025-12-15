@@ -404,7 +404,7 @@
             white-space: nowrap;
         }
 
-        &-image{
+        &-image {
             @include adaptive-value("width", 120, 60, 1);
             @include adaptive-value("height", 120, 60, 1);
         }
@@ -485,6 +485,224 @@
         p {
             @include adaptive-value("font-size", 20, 16, 1);
             line-height: calc(28 / 20);
+        }
+    }
+}
+
+.testimonials {
+    @include adaptive-value("padding-top", 50, 50, 1);
+    padding-bottom: 150px;
+    overflow: hidden;
+
+    @include media ("<desktop") {
+        padding-bottom: 30px;
+    }
+
+    .container {
+        @include media ("<desktop") {
+            padding: 0;
+        }
+    }
+
+    &_heading {
+        display: flex;
+        align-items: center;
+        justify-content:
+            flex-end;
+        @include adaptive-value("gap", 56, 16, 1);
+        @include adaptive-value("margin-bottom", 96, 60, 1);
+        width: 100%;
+
+        h2,
+        span.section-title {
+            color: #D9E3E2;
+            @include adaptive-value("font-size", 140, 48, 1);
+            white-space: nowrap;
+        }
+
+        &-image {
+            @include adaptive-value("width", 120, 60, 1);
+            @include adaptive-value("height", 120, 60, 1);
+        }
+    }
+
+    &_inner {
+        display: flex;
+        align-items: flex-start;
+        @include adaptive-value("gap", 91, 16, 1);
+        position: relative;
+        padding-bottom: 90px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            gap: 30px;
+            padding-bottom: 0;
+        }
+    }
+
+    &_image {
+        border-radius: 24px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    &_subtitle {
+        @include adaptive-value("font-size", 48, 24, 1);
+        font-weight: 500;
+        line-height: calc(56 / 48);
+        max-width: 510px;
+        width: 100%;
+
+        @include media ("<desktop") {
+            padding: 0 16px;
+        }
+    }
+
+    &_slider-wrapper {
+        position: absolute;
+        top: 20%;
+        left: 15%;
+        max-width: 1150px;
+        width: 100%;
+        padding: 25px;
+        border-radius: 44px;
+        background-color: $white;
+
+        @include media ("<desktop") {
+            position: static;
+            padding: 0;
+            border-radius: 0;
+            background-color: transparent;
+        }
+    }
+
+    &_slider {
+        @include media ("<desktop") {
+            padding: 0 16px;
+        }
+    }
+
+    .swiper-slide {
+        min-height: 100%;
+        height: auto;
+    }
+
+    &_slider-buttons {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        @include adaptive-value("gap", 33, 12, 1);
+
+        @include media ("<desktop") {
+            position: static;
+        }
+
+        @include media ("<desktop") {
+            padding: 0 16px;
+        }
+    }
+
+    .swiper-button-prev {
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: static;
+        @include adaptive-value("width", 64, 32, 1);
+        @include adaptive-value("height", 64, 32, 1);
+        border-radius: 4px;
+        background-color: #E6F0EE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+
+        img {
+            width: 45%;
+            height: auto;
+        }
+
+        .swiper-navigation-icon {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $orange;
+            outline-offset: 2px;
+        }
+    }
+
+    &_slide {
+        background-color: $green;
+        border-radius: 24px;
+        @include adaptive-value("padding-left", 40, 16, 1);
+        @include adaptive-value("padding-right", 40, 16, 1);
+        @include adaptive-value("padding-top", 80, 24, 1);
+        @include adaptive-value("padding-bottom", 80, 24, 1);
+        overflow: hidden;
+        position: relative;
+
+        &-dots {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        &-quote {
+            @include adaptive-value("width", 53, 24, 1);
+            @include adaptive-value("height", 53, 24, 1);
+            @include adaptive-value("margin-bottom", 48, 24, 1);
+        }
+
+        &-text {
+            @include adaptive-value("font-size", 20, 16, 1);
+            line-height: calc(28 / 20);
+            color: $white;
+            font-weight: 500;
+            @include adaptive-value("margin-bottom", 32, 16, 1);
+            margin: 0;
+            padding: 0;
+            border: none;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        &-author {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            @include adaptive-value("gap", 8, 4, 1);
+
+            p {
+                @include adaptive-value("font-size", 24, 18, 1);
+                font-weight: 600;
+                line-height: calc(28 / 24);
+                color: $orange;
+            }
+
+            span {
+                @include adaptive-value("font-size", 16, 14, 1);
+                line-height: calc(28 / 20);
+                color: $white;
+            }
         }
     }
 }

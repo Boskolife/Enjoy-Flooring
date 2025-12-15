@@ -1,4 +1,39 @@
 /* eslint-env browser */
+/* global Swiper */
+
+// Initialize Swiper when DOM is ready
+const initSwiper = () => {
+  const swiperElement = document.querySelector('.testimonials_slider');
+  if (swiperElement && typeof Swiper !== 'undefined') {
+    new Swiper('.testimonials_slider', {
+      slidesPerView: 2,
+      spaceBetween: 50,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.1,
+          spaceBetween: 15,
+        },
+        650: {
+          slidesPerView: 1.7,
+          spaceBetween: 15,
+        },
+        960: {
+          slidesPerView: 2,
+          spaceBetween: 25,
+        },
+        1200: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+      },
+    });
+  }
+};
+
 // Burger menu toggle
 const initBurgerMenu = () => {
   const burger = document.querySelector('.header__burger');
@@ -90,7 +125,7 @@ const initBurgerMenu = () => {
     if (!burger.classList.contains('is-active')) return;
 
     const focusableElements = menu.querySelectorAll(
-      'a, button, [tabindex]:not([tabindex="-1"])'
+      'a, button, [tabindex]:not([tabindex="-1"])',
     );
     const firstFocusable = focusableElements[0];
     const lastFocusable = focusableElements[focusableElements.length - 1];
@@ -125,7 +160,11 @@ const initBurgerMenu = () => {
 
 // Initialize on DOM ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initBurgerMenu);
+  document.addEventListener('DOMContentLoaded', () => {
+    initBurgerMenu();
+    initSwiper();
+  });
 } else {
   initBurgerMenu();
+  initSwiper();
 }

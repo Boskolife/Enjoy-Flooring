@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enjoy Flooring</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
   <link rel="stylesheet" href="/styles/main.scss">
+
+
 </head>
 
 <body>
@@ -216,11 +219,13 @@
       <div class="container">
         <div class="about-us_heading">
           <h2 class="section-title" id="about-us-title">About us</h2>
-          <img class="about-us_heading-image" src="./images/arrow-green.svg" alt="" aria-hidden="true">
+          <img class="about-us_heading-image" src="./images/arrow-green.svg" alt=""
+            aria-hidden="true">
           <span class="section-title" aria-hidden="true">About us</span>
         </div>
         <div class="about-us_inner">
-          <p class="about-us_text">Dedicated Wood Floor Restoration Specialist. For over two decades, we’ve been restoring
+          <p class="about-us_text">Dedicated Wood Floor Restoration Specialist. For over two
+            decades, we’ve been restoring
             wooden floors in London’s Victorian, Edwardian and modern homes. We focus on one thing
             and one thing only: <strong>repairing and restoring wooden floors to the highest
               standard.</strong> No
@@ -256,7 +261,115 @@
           </div>
         </div>
     </section>
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="testimonials_heading">
+          <h2 class="section-title" id="testimonials-title">Testimonials</h2>
+          <img class="testimonials_heading-image" src="./images/arrow-green.svg" alt=""
+            aria-hidden="true">
+          <span class="section-title" aria-hidden="true">Testimonials</span>
+        </div>
+        <div class="testimonials_inner">
+          <img class="testimonials_image" src="./images/testimonials-img.png" alt=""
+            width="630" height="630" aria-hidden="true">
+          <h3 class="testimonials_subtitle">What Our Customers Say About Us</h3>
+          <div class="testimonials_slider-wrapper">
+            <div class="swiper testimonials_slider" role="region" aria-label="Customer testimonials">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <article class="testimonials_slide">
+                    <img class="testimonials_slide-dots" src="./images/dots-2.svg"
+                      alt="" width="460" height="460" aria-hidden="true">
+                    <img class="testimonials_slide-quote" src="./images/quote.svg"
+                      alt="" width="53" height="53" aria-hidden="true">
+                    <blockquote class="testimonials_slide-text">
+                      <p>Enjoy Renovation transformed our outdated
+                        Victorian kitchen into a stunning
+                        modern space. The team was professional, reliable, and completed the work
+                        exactly
+                        on schedule. The attention to detail was exceptional, and they managed
+                        everything
+                        so we didn't have to worry about a thing.</p>
+                    </blockquote>
+                    <footer class="testimonials_slide-author">
+                      <p>Sarah & Michael</p>
+                      <span>Clapham</span>
+                    </footer>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="testimonials_slide">
+                    <img class="testimonials_slide-dots" src="./images/dots-2.svg"
+                      alt="" width="460" height="460" aria-hidden="true">
+                    <img class="testimonials_slide-quote" src="./images/quote.svg"
+                      alt="" width="53" height="53" aria-hidden="true">
+                    <blockquote class="testimonials_slide-text">
+                      <p>From start to finish, the service was
+                        outstanding. They handled our complete bathroom renovation with such care and
+                        precision. The quality of workmanship exceeded our expectations, and they were
+                        always transparent about timelines and costs.</p>
+                    </blockquote>
+                    <footer class="testimonials_slide-author">
+                      <p>Emma Richardson</p>
+                      <span>Fulham</span>
+                    </footer>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                    <article class="testimonials_slide">
+                    <img class="testimonials_slide-dots" src="./images/dots-2.svg"
+                      alt="" width="460" height="460" aria-hidden="true">
+                    <img class="testimonials_slide-quote" src="./images/quote.svg"
+                      alt="" width="53" height="53" aria-hidden="true">
+                    <blockquote class="testimonials_slide-text">
+                      <p>Enjoy Renovation transformed our outdated
+                        Victorian kitchen into a stunning
+                        modern space. The team was professional, reliable, and completed the work
+                        exactly
+                        on schedule. The attention to detail was exceptional, and they managed
+                        everything
+                        so we didn't have to worry about a thing.</p>
+                    </blockquote>
+                    <footer class="testimonials_slide-author">
+                      <p>Sarah & Michael</p>
+                      <span>Clapham</span>
+                    </footer>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="testimonials_slide">
+                    <img class="testimonials_slide-dots" src="./images/dots-2.svg"
+                      alt="" width="460" height="460" aria-hidden="true">
+                    <img class="testimonials_slide-quote" src="./images/quote.svg"
+                      alt="" width="53" height="53" aria-hidden="true">
+                    <blockquote class="testimonials_slide-text">
+                      <p>From start to finish, the service was
+                        outstanding. They handled our complete bathroom renovation with such care and
+                        precision. The quality of workmanship exceeded our expectations, and they were
+                        always transparent about timelines and costs.</p>
+                    </blockquote>
+                    <footer class="testimonials_slide-author">
+                      <p>Emma Richardson</p>
+                      <span>Fulham</span>
+                    </footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials_slider-buttons">
+            <button type="button" class="swiper-button-prev" aria-label="Previous testimonial">
+              <img src="./images/arrow-right.svg" alt="" aria-hidden="true">
+            </button>
+            <button type="button" class="swiper-button-next" aria-label="Next testimonial">
+              <img src="./images/arrow-right.svg" alt="" aria-hidden="true">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script type="module" src="/js/main.js"></script>
 </body>
 
