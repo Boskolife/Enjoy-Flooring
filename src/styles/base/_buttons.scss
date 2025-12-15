@@ -1,4 +1,5 @@
 .btn {
+    display: inline-block;
     font-weight: 600;
     font-size: 16px;
     line-height: calc(24 / 16);
@@ -8,8 +9,143 @@
     color: $white;
     text-decoration: none;
     transition: all 0.3s ease;
+    outline: none;
+
+    @include media ("<tablet") {
+        padding: 8px 18px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: all 0.1s ease;
+    }
 
     &:hover {
         background-color: darken($orange, 10%);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $orange;
+        outline-offset: 4px;
+        border-radius: 40px;
+    }
+}
+
+// Button with icon styles
+.btn-icon {
+    width: max-content;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    border-radius: 40px;
+    padding: 10px 8px 10px 16px;
+    @include adaptive-value("font-size", 20, 16, 1);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    outline: none;
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: all 0.1s ease;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        z-index: -1;
+        transition: width 0.3s ease;
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: width 0.1s ease;
+        }
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+            transition: width 0.3s ease;
+
+            @media (prefers-reduced-motion: reduce) {
+                transition: width 0.1s ease;
+            }
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $orange;
+        outline-offset: 4px;
+        border-radius: 40px;
+    }
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+}
+
+// White variant (with white border and orange hover)
+.btn-icon--white {
+    border: 1px solid $white;
+    color: $white;
+
+    &::before {
+        background-color: $orange;
+    }
+
+    .btn-icon-wrapper {
+        background-color: $white;
+    }
+}
+
+// Orange variant (with orange border and white hover)
+.btn-icon--orange {
+    border: 1px solid $orange;
+    color: $orange;
+
+    &::before {
+        background-color: $orange;
+    }
+
+    &:hover {
+        color: $white;
+    }
+
+    .btn-icon-wrapper {
+        background-color: $orange;
+    }
+}
+
+.btn-icon--outline{
+    border: none;
+    padding: 0;
+    color: $white;
+    
+    .btn-icon-wrapper {
+        background-color: $orange;
+    }
+
+    &:hover {
+        .btn-icon-wrapper {
+            rotate: 45deg;
+            transition: rotate 0.3s ease;
+        }
     }
 }
