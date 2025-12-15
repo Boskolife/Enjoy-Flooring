@@ -1,0 +1,185 @@
+.section-tip {
+    @include adaptive-value("font-size", 16, 12, 1);
+    font-weight: 500;
+    color: $white;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+
+    &::before {
+        content: '';
+        width: 16px;
+        height: 1px;
+        background-color: $white;
+    }
+}
+
+.hero {
+    height: 650px;
+    position: relative;
+
+
+    @include media ("<tablet") {
+        height: 550px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #023428;
+        background: linear-gradient(130deg, rgba(2, 52, 40, 0.8) 0%, rgba(2, 52, 40, 0.3) 100%);
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #023428;
+        background: linear-gradient(260deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+        z-index: 1;
+    }
+
+    &_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    &_inner {
+        position: relative;
+        z-index: 5;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 16px;
+        @include adaptive-value("padding-bottom", 96, 58, 1);
+
+    }
+
+    &_content {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+
+        @include media ("<tablet") {
+            flex-direction: column
+        }
+
+        h1 {
+            @include adaptive-value("font-size", 56, 32, 1);
+            font-weight: 700;
+            color: $white;
+
+            span {
+                color: $orange;
+            }
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 430px;
+            width: 100%;
+
+            @include media ("<tablet") {
+                flex-direction: column-reverse;
+                max-width: 100%;
+            }
+
+            p {
+                @include adaptive-value("font-size", 20, 16, 1);
+                line-height: calc(28 / 20);
+                color: $white;
+            }
+        }
+    }
+
+    &_btn {
+        width: max-content;
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        border: 1px solid $white;
+        border-radius: 40px;
+        padding: 10px 8px 10px 16px;
+        @include adaptive-value("font-size", 20, 16, 1);
+        font-weight: 600;
+        color: $white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        position: relative;
+        outline: none;
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: all 0.1s ease;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: $orange;
+            z-index: -1;
+            transition: width 0.3s ease;
+
+            @media (prefers-reduced-motion: reduce) {
+                transition: width 0.1s ease;
+            }
+        }
+
+        &:hover {
+            &::before {
+                width: 100%;
+                transition: width 0.3s ease;
+
+                @media (prefers-reduced-motion: reduce) {
+                    transition: width 0.1s ease;
+                }
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $orange;
+            outline-offset: 4px;
+            border-radius: 40px;
+        }
+
+        &-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: $white;
+            border-radius: 50%;
+        }
+    }
+}
