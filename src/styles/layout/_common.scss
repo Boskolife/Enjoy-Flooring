@@ -706,3 +706,212 @@
         }
     }
 }
+
+.contact {
+    @include adaptive-value("padding-top", 96, 60, 1);
+    @include adaptive-value("padding-bottom", 96, 60, 1);
+    overflow: hidden;
+    position: relative;
+    background-color: $green;
+
+    &_bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+
+    &_inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    &_content {
+        min-width: 320px;
+
+        @include media ("<desktop") {
+            min-width: 100%;
+        }
+    }
+
+    .section-title {
+        color: $white;
+        font-weight: 500;
+        @include adaptive-value("margin-bottom", 32, 16, 1);
+    }
+
+    &_items {
+        display: flex;
+        flex-direction: column;
+        @include adaptive-value("gap", 24, 16, 1);
+        margin-bottom: 32px;
+    }
+
+    &_item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+
+        img {
+            @include adaptive-value("width", 32, 24, 1);
+            @include adaptive-value("height", 32, 24, 1);
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+
+            P,
+            a {
+                color: $white;
+                @include adaptive-value("font-size", 20, 16, 1);
+            }
+
+            p {
+                font-weight: 600;
+                line-height: calc(18 / 20);
+            }
+
+            a {
+                font-weight: 500;
+                line-height: 140%;
+            }
+        }
+    }
+
+    &_founders {
+        display: flex;
+        align-items: center;
+        @include adaptive-value("gap", 38, 24, 1);
+        @include adaptive-value("margin-bottom", 32, 16, 1);
+    }
+
+    &_founder {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            @include adaptive-value("gap", 8, 2, 1);
+            color: $white;
+
+            P {
+                @include adaptive-value("font-size", 20, 18, 1);
+                font-weight: 600;
+            }
+
+            span {
+                @include adaptive-value("font-size", 16, 14, 1);
+            }
+        }
+    }
+
+    &_media {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        span {
+            @include adaptive-value("font-size", 20, 16, 1);
+            color: $white;
+            font-weight: 500;
+            line-height: 140%;
+        }
+
+        &-items {
+            display: flex;
+            align-items: center;
+            @include adaptive-value("gap", 24, 16, 1);
+        }
+
+        &-item {
+            width: 24px;
+            height: 24px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &_form {
+        max-width: 660px;
+        width: 100%;
+        @include adaptive-value("padding-top", 40, 32, 1);
+        @include adaptive-value("padding-bottom", 40, 32, 1);
+        @include adaptive-value("padding-right", 24, 16, 1);
+        @include adaptive-value("padding-left", 24, 16, 1);
+        background-color: $white;
+        border-radius: 24px;
+
+        @include media ("<desktop") {
+            max-width: 100%
+        }
+
+        &-title {
+            @include adaptive-value("font-size", 36, 24, 1);
+            font-weight: 500;
+            line-height: 110%;
+            @include adaptive-value("margin-bottom", 32, 12, 1);
+        }
+
+        &-body {
+            display: flex;
+            flex-direction: column;
+            @include adaptive-value("row-gap", 40, 24, 1);
+        }
+
+        &-inputs {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 16px;
+            @include adaptive-value("row-gap", 40, 24, 1);
+
+            input {
+                width: 48%;
+                border: none;
+                border-bottom: 1px solid #3D3D3D;
+                padding: 13px 15px;
+                @include adaptive-value("font-size", 16, 14, 1);
+
+                @include media ("<tablet") {
+                    padding-left: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        &-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #3D3D3D;
+            font-weight: 500;
+            @include adaptive-value("font-size", 14, 12, 1);
+            line-height: 140%;
+        }
+
+        .btn {
+            width: max-content;
+            margin-left: auto;
+            border: none;
+        }
+    }
+}
