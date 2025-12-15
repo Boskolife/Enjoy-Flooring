@@ -884,8 +884,16 @@
             column-gap: 16px;
             @include adaptive-value("row-gap", 40, 24, 1);
 
-            input {
+            label {
                 width: 48%;
+
+                @include media ("<tablet") {
+                    width: 100%;
+                }
+            }
+
+            input {
+                width: 100%;
                 border: none;
                 border-bottom: 1px solid #3D3D3D;
                 padding: 13px 15px;
@@ -893,7 +901,7 @@
 
                 @include media ("<tablet") {
                     padding-left: 0;
-                    width: 100%;
+
                 }
             }
         }
