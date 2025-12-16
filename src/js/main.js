@@ -168,3 +168,7 @@ if (document.readyState === 'loading') {
   initBurgerMenu();
   initSwiper();
 }
+
+// Current year
+const currentYear = new Date().getFullYear();
+document.querySelector('.current-year').textContent = currentYear;
