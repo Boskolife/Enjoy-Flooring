@@ -180,13 +180,29 @@ if (currentYearElement) {
 const initBeforeAfterSlider = () => {
   const sliders = document.querySelectorAll('.slide-line');
 
-  sliders.forEach((slider) => {
+  sliders.forEach((slider, index) => {
     const container = slider.closest('.gallery__item-images');
     if (!container) return;
 
     const beforeImage = container.querySelector('.gallery__image-before');
     const afterImage = container.querySelector('.gallery__image-after');
     if (!beforeImage || !afterImage) return;
+
+    // Ensure unique IDs for accessibility
+    const containerId = `gallery-images-${index + 1}`;
+    if (!container.id || (container.id.startsWith('gallery-images-') && container.id === 'gallery-images-2')) {
+      container.id = containerId;
+    }
+    if (!slider.getAttribute('aria-controls') || slider.getAttribute('aria-controls') === 'gallery-images-2') {
+      slider.setAttribute('aria-controls', containerId);
+    }
+
+    // Improve aria-label with project title if available
+    const itemContent = container.closest('.gallery__item')?.querySelector('.gallery__item-title');
+    if (itemContent && slider.getAttribute('aria-label')?.includes('Lorem Ipsum')) {
+      const projectTitle = itemContent.textContent.trim();
+      slider.setAttribute('aria-label', `Drag slider to compare before and after images for ${projectTitle}`);
+    }
 
     let isDragging = false;
     let currentPercentage = 50;
@@ -204,6 +220,7 @@ const initBeforeAfterSlider = () => {
       beforeImage.style.clipPath = clipPathValue;
       beforeImage.style.webkitClipPath = clipPathValue;
       slider.setAttribute('aria-valuenow', currentPercentage);
+      slider.setAttribute('aria-valuetext', `${currentPercentage}% - showing ${currentPercentage}% before and ${100 - currentPercentage}% after`);
     };
 
     const updateSlider = (clientX) => {
@@ -219,7 +236,10 @@ const initBeforeAfterSlider = () => {
       // Обрезаем изображение "до" справа, показывая только левую часть до позиции слайдера
       beforeImage.style.clipPath = clipPathValue;
       beforeImage.style.webkitClipPath = clipPathValue;
-      slider.setAttribute('aria-valuenow', Math.round(currentPercentage));
+      const roundedPercentage = Math.round(currentPercentage);
+      slider.setAttribute('aria-valuenow', roundedPercentage);
+      // Update aria-valuetext for better screen reader experience
+      slider.setAttribute('aria-valuetext', `${roundedPercentage}% - showing ${roundedPercentage}% before and ${100 - roundedPercentage}% after`);
     };
 
     const handleStart = (clientX, isClickOnSlider = false) => {
@@ -333,11 +353,87 @@ const initBeforeAfterSlider = () => {
   });
 };
 
+// Video player functionality
+const initVideoPlayer = () => {
+  const videoWrappers = document.querySelectorAll('.video__item-wrapper');
+
+  videoWrappers.forEach((wrapper, index) => {
+    const playButton = wrapper.querySelector('.video__item-play-btn-wrapper');
+    const video = wrapper.querySelector('.video__item-video');
+
+    if (!playButton || !video) return;
+
+    // Ensure unique IDs for accessibility
+    const videoId = `video-${index + 1}`;
+    if (!video.id || video.id === 'video-1') {
+      video.id = videoId;
+    }
+    if (!playButton.getAttribute('aria-controls') || playButton.getAttribute('aria-controls') === 'video-1') {
+      playButton.setAttribute('aria-controls', videoId);
+    }
+
+    // Hide controls initially
+    video.removeAttribute('controls');
+
+    // Play video on button click
+    const playVideo = () => {
+      // Unmute video before playing (required for autoplay policies)
+      video.muted = false;
+      video.play().then(() => {
+        // Show controls after video starts playing
+        video.setAttribute('controls', 'controls');
+        playButton.style.display = 'none';
+      }).catch((error) => {
+        console.error('Error playing video:', error);
+        // If autoplay fails, try with muted
+        video.muted = true;
+        video.play().then(() => {
+          video.setAttribute('controls', 'controls');
+          playButton.style.display = 'none';
+        });
+      });
+    };
+
+    playButton.addEventListener('click', playVideo);
+
+    // Show play button when video is paused or ended
+    const showPlayButton = () => {
+      if (video.paused || video.ended) {
+        playButton.style.display = 'block';
+        video.removeAttribute('controls');
+      }
+    };
+
+    // Hide play button when video is playing
+    const hidePlayButton = () => {
+      if (!video.paused && !video.ended) {
+        playButton.style.display = 'none';
+        video.setAttribute('controls', 'controls');
+      }
+    };
+
+    video.addEventListener('play', hidePlayButton);
+    video.addEventListener('pause', showPlayButton);
+    video.addEventListener('ended', showPlayButton);
+
+    // Handle video click to play/pause
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        playVideo();
+      } else {
+        video.pause();
+      }
+    });
+  });
+};
+
 // Initialize before/after slider
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initBeforeAfterSlider();
+    initVideoPlayer();
   });
 } else {
   initBeforeAfterSlider();
+  initVideoPlayer();
 }

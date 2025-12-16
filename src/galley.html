@@ -14,13 +14,13 @@
 <body>
     {{> header }}
     <main>
-        <section class="gallery">
+        <section class="gallery" aria-labelledby="gallery-section-title">
             <div class="container">
                 <div class="gallery__inner">
                     <div class="gallery__header">
                         <span class="section-tip">100% Managed high-end renovations</span>
                         <div class="gallery__content">
-                            <h1>Complete Flooring Solutions - <span>from restoration to full
+                            <h1 id="gallery-section-title">Complete Flooring Solutions - <span>from restoration to full
                                     design</span>
                             </h1>
                             <a href="tel:+1234567890" class="btn-icon btn-icon--orange"
@@ -49,8 +49,8 @@
                     </div>
                 </div>
                 <div class="gallery__items">
-                    <div class="gallery__item">
-                        <div class="gallery__item-images">
+                    <article class="gallery__item">
+                        <div class="gallery__item-images" id="gallery-images-1" role="region" aria-label="Before and after comparison slider">
                             <div class="gallery__image-after">
                                 <img src="./images/example-img-2.png" alt="After renovation"
                                     width="375" height="250">
@@ -59,9 +59,9 @@
                                 <img src="./images/example-img-1.png" alt="Before renovation"
                                     width="375" height="250">
                             </div>
-                            <button class="slide-line" aria-label="Drag to compare images"
+                            <button class="slide-line" aria-label="Drag slider to compare before and after images for Lorem Ipsum dolor sit"
                                 role="slider" aria-valuemin="0" aria-valuemax="100"
-                                aria-valuenow="50" tabindex="0">
+                                aria-valuenow="50" aria-controls="gallery-images-1" tabindex="0">
                                 <img src="./images/slide-line.svg" alt="" width="375" height="250"
                                     aria-hidden="true">
                             </button>
@@ -71,9 +71,9 @@
                             <p class="gallery__item-text">What clients get: perfect levelling, clean
                                 installation, long-lasting results.</p>
                         </div>
-                    </div>
-                    <div class="gallery__item">
-                        <div class="gallery__item-images">
+                    </article>
+                    <article class="gallery__item">
+                        <div class="gallery__item-images" id="gallery-images-2" role="img" aria-label="Before and after comparison slider">
                             <div class="gallery__image-after">
                                 <img src="./images/example-img-2.png" alt="After renovation"
                                     width="375" height="250">
@@ -82,9 +82,9 @@
                                 <img src="./images/example-img-1.png" alt="Before renovation"
                                     width="375" height="250">
                             </div>
-                            <button class="slide-line" aria-label="Drag to compare images"
+                            <button class="slide-line" aria-label="Drag slider to compare before and after images for Lorem Ipsum dolor sit"
                                 role="slider" aria-valuemin="0" aria-valuemax="100"
-                                aria-valuenow="50" tabindex="0">
+                                aria-valuenow="50" aria-controls="gallery-images-2" tabindex="0">
                                 <img src="./images/slide-line.svg" alt="" width="375" height="250"
                                     aria-hidden="true">
                             </button>
@@ -94,9 +94,9 @@
                             <p class="gallery__item-text">What clients get: perfect levelling, clean
                                 installation, long-lasting results.</p>
                         </div>
-                    </div>
-                    <div class="gallery__item">
-                        <div class="gallery__item-images">
+                    </article>
+                    <article class="gallery__item">
+                        <div class="gallery__item-images" id="gallery-images-2" role="img" aria-label="Before and after comparison slider">
                             <div class="gallery__image-after">
                                 <img src="./images/example-img-2.png" alt="After renovation"
                                     width="375" height="250">
@@ -105,9 +105,9 @@
                                 <img src="./images/example-img-1.png" alt="Before renovation"
                                     width="375" height="250">
                             </div>
-                            <button class="slide-line" aria-label="Drag to compare images"
+                            <button class="slide-line" aria-label="Drag slider to compare before and after images for Lorem Ipsum dolor sit"
                                 role="slider" aria-valuemin="0" aria-valuemax="100"
-                                aria-valuenow="50" tabindex="0">
+                                aria-valuenow="50" aria-controls="gallery-images-2" tabindex="0">
                                 <img src="./images/slide-line.svg" alt="" width="375" height="250"
                                     aria-hidden="true">
                             </button>
@@ -117,9 +117,9 @@
                             <p class="gallery__item-text">What clients get: perfect levelling, clean
                                 installation, long-lasting results.</p>
                         </div>
-                    </div>
-                    <div class="gallery__item">
-                        <div class="gallery__item-images">
+                    </article>
+                    <article class="gallery__item">
+                        <div class="gallery__item-images" id="gallery-images-2" role="img" aria-label="Before and after comparison slider">
                             <div class="gallery__image-after">
                                 <img src="./images/example-img-2.png" alt="After renovation"
                                     width="375" height="250">
@@ -128,9 +128,9 @@
                                 <img src="./images/example-img-1.png" alt="Before renovation"
                                     width="375" height="250">
                             </div>
-                            <button class="slide-line" aria-label="Drag to compare images"
+                            <button class="slide-line" aria-label="Drag slider to compare before and after images for Lorem Ipsum dolor sit"
                                 role="slider" aria-valuemin="0" aria-valuemax="100"
-                                aria-valuenow="50" tabindex="0">
+                                aria-valuenow="50" aria-controls="gallery-images-2" tabindex="0">
                                 <img src="./images/slide-line.svg" alt="" width="375" height="250"
                                     aria-hidden="true">
                             </button>
@@ -140,9 +140,9 @@
                             <p class="gallery__item-text">What clients get: perfect levelling, clean
                                 installation, long-lasting results.</p>
                         </div>
-                    </div>
-                    <div class="gallery__item">
-                        <div class="gallery__item-images">
+                    </article>
+                    <article class="gallery__item">
+                        <div class="gallery__item-images" id="gallery-images-2" role="img" aria-label="Before and after comparison slider">
                             <div class="gallery__image-after">
                                 <img src="./images/example-img-2.png" alt="After renovation"
                                     width="375" height="250">
@@ -151,9 +151,9 @@
                                 <img src="./images/example-img-1.png" alt="Before renovation"
                                     width="375" height="250">
                             </div>
-                            <button class="slide-line" aria-label="Drag to compare images"
+                            <button class="slide-line" aria-label="Drag slider to compare before and after images for Lorem Ipsum dolor sit"
                                 role="slider" aria-valuemin="0" aria-valuemax="100"
-                                aria-valuenow="50" tabindex="0">
+                                aria-valuenow="50" aria-controls="gallery-images-2" tabindex="0">
                                 <img src="./images/slide-line.svg" alt="" width="375" height="250"
                                     aria-hidden="true">
                             </button>
@@ -163,9 +163,9 @@
                             <p class="gallery__item-text">What clients get: perfect levelling, clean
                                 installation, long-lasting results.</p>
                         </div>
-                    </div>
-                    <div class="gallery__item">
-                        <div class="gallery__item-images">
+                    </article>
+                    <article class="gallery__item">
+                        <div class="gallery__item-images" id="gallery-images-2" role="img" aria-label="Before and after comparison slider">
                             <div class="gallery__image-after">
                                 <img src="./images/example-img-2.png" alt="After renovation"
                                     width="375" height="250">
@@ -174,9 +174,9 @@
                                 <img src="./images/example-img-1.png" alt="Before renovation"
                                     width="375" height="250">
                             </div>
-                            <button class="slide-line" aria-label="Drag to compare images"
+                            <button class="slide-line" aria-label="Drag slider to compare before and after images for Lorem Ipsum dolor sit"
                                 role="slider" aria-valuemin="0" aria-valuemax="100"
-                                aria-valuenow="50" tabindex="0">
+                                aria-valuenow="50" aria-controls="gallery-images-2" tabindex="0">
                                 <img src="./images/slide-line.svg" alt="" width="375" height="250"
                                     aria-hidden="true">
                             </button>
@@ -186,7 +186,7 @@
                             <p class="gallery__item-text">What clients get: perfect levelling, clean
                                 installation, long-lasting results.</p>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
