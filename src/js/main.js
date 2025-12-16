@@ -171,4 +171,173 @@ if (document.readyState === 'loading') {
 
 // Current year
 const currentYear = new Date().getFullYear();
-document.querySelector('.current-year').textContent = currentYear;
+const currentYearElement = document.querySelector('.current-year');
+if (currentYearElement) {
+  currentYearElement.textContent = currentYear;
+}
+
+// Before/After slider functionality
+const initBeforeAfterSlider = () => {
+  const sliders = document.querySelectorAll('.slide-line');
+
+  sliders.forEach((slider) => {
+    const container = slider.closest('.gallery__item-images');
+    if (!container) return;
+
+    const beforeImage = container.querySelector('.gallery__image-before');
+    const afterImage = container.querySelector('.gallery__image-after');
+    if (!beforeImage || !afterImage) return;
+
+    let isDragging = false;
+    let currentPercentage = 50;
+    let dragOffset = 0;
+
+    // Initialize slider position
+    const initSlider = () => {
+      currentPercentage = 50;
+      const clipPathValue = `inset(0 ${100 - currentPercentage}% 0 0)`;
+      // Центр слайдера на 50%, учитывая transform: translateX(-50%)
+      slider.style.left = `${currentPercentage}%`;
+      slider.style.transform = 'translateX(-50%)';
+      slider.style.webkitTransform = 'translateX(-50%)';
+      // Поддержка iOS Safari
+      beforeImage.style.clipPath = clipPathValue;
+      beforeImage.style.webkitClipPath = clipPathValue;
+      slider.setAttribute('aria-valuenow', currentPercentage);
+    };
+
+    const updateSlider = (clientX) => {
+      const rect = container.getBoundingClientRect();
+      const x = clientX - rect.left - dragOffset;
+      currentPercentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+
+      const clipPathValue = `inset(0 ${100 - currentPercentage}% 0 0)`;
+      // Центр слайдера на currentPercentage%, учитывая transform: translateX(-50%)
+      slider.style.left = `${currentPercentage}%`;
+      slider.style.transform = 'translateX(-50%)';
+      slider.style.webkitTransform = 'translateX(-50%)';
+      // Обрезаем изображение "до" справа, показывая только левую часть до позиции слайдера
+      beforeImage.style.clipPath = clipPathValue;
+      beforeImage.style.webkitClipPath = clipPathValue;
+      slider.setAttribute('aria-valuenow', Math.round(currentPercentage));
+    };
+
+    const handleStart = (clientX, isClickOnSlider = false) => {
+      isDragging = true;
+      slider.style.transition = 'none';
+      beforeImage.style.transition = 'none';
+      
+      if (isClickOnSlider) {
+        // При клике на слайдер запоминаем смещение от центра
+        const sliderRect = slider.getBoundingClientRect();
+        const sliderCenterX = sliderRect.left + sliderRect.width / 2;
+        dragOffset = clientX - sliderCenterX;
+      } else {
+        dragOffset = 0;
+      }
+      
+      updateSlider(clientX);
+    };
+
+    const handleMove = (clientX) => {
+      if (!isDragging) return;
+      updateSlider(clientX);
+    };
+
+    const handleEnd = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      slider.style.transition = '';
+      beforeImage.style.transition = '';
+    };
+
+    // Initialize on load
+    initSlider();
+
+    // Mouse events
+    slider.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      handleStart(e.clientX, true);
+    });
+
+    const mouseMoveHandler = (e) => {
+      if (isDragging) {
+        handleMove(e.clientX);
+      }
+    };
+
+    const mouseUpHandler = () => {
+      handleEnd();
+    };
+
+    document.addEventListener('mousemove', mouseMoveHandler);
+    document.addEventListener('mouseup', mouseUpHandler);
+
+    // Touch events
+    slider.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      handleStart(e.touches[0].clientX, true);
+    });
+
+    const touchMoveHandler = (e) => {
+      if (isDragging) {
+        e.preventDefault();
+        handleMove(e.touches[0].clientX);
+      }
+    };
+
+    const touchEndHandler = () => {
+      handleEnd();
+    };
+
+    document.addEventListener('touchmove', touchMoveHandler, { passive: false });
+    document.addEventListener('touchend', touchEndHandler);
+
+    // Keyboard navigation
+    slider.addEventListener('keydown', (e) => {
+      const step = e.shiftKey ? 10 : 1;
+      let newPercentage = currentPercentage;
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          newPercentage = Math.max(0, currentPercentage - step);
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          newPercentage = Math.min(100, currentPercentage + step);
+          break;
+        case 'Home':
+          e.preventDefault();
+          newPercentage = 0;
+          break;
+        case 'End':
+          e.preventDefault();
+          newPercentage = 100;
+          break;
+        default:
+          return;
+      }
+
+      currentPercentage = newPercentage;
+      const rect = container.getBoundingClientRect();
+      const clientX = rect.left + (currentPercentage / 100) * rect.width;
+      updateSlider(clientX);
+    });
+
+    // Click on container to move slider
+    container.addEventListener('click', (e) => {
+      if (e.target === slider || slider.contains(e.target)) return;
+      updateSlider(e.clientX);
+    });
+  });
+};
+
+// Initialize before/after slider
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initBeforeAfterSlider();
+  });
+} else {
+  initBeforeAfterSlider();
+}

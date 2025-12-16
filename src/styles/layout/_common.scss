@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url('../images/body-line.png');
     background-size: cover;
     background-position: center;
@@ -931,6 +931,241 @@ body{
             width: max-content;
             margin-left: auto;
             border: none;
+        }
+    }
+}
+
+.gallery {
+    @include adaptive-value("padding-top", 40, 24, 1);
+    @include adaptive-value("padding-bottom", 96, 60, 1);
+
+    &__inner {
+        @include adaptive-value("margin-bottom", 50, 30, 1);
+
+        @include media ("<tablet") {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 40px;
+
+        @include media ("<tablet") {
+            display: contents;
+        }
+
+        h1 {
+            @include adaptive-value("font-size", 64, 32, 1);
+            font-weight: 700;
+            color: $green;
+            max-width: 1000px;
+            width: 100%;
+
+            span {
+                color: $orange;
+            }
+        }
+
+        .btn-icon {
+            white-space: nowrap;
+            min-width: min-content;
+
+            @include media ("<tablet") {
+                order: 4;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        width: 100%;
+
+        @include media ("<tablet") {
+            display: contents;
+        }
+    }
+
+    .section-tip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $green;
+
+        &::before {
+            content: '';
+            width: 16px;
+            height: 1px;
+            background-color: $green;
+        }
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-items: center;
+        gap: 34px;
+
+        @include media ("<tablet") {
+            display: contents;
+        }
+    }
+
+    &__labels {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px 8px;
+    }
+
+    &__label {
+        padding: 4px 8px;
+        @include adaptive-value("font-size", 16, 11, 1);
+        font-weight: 600;
+        background-color: #D9E3E2;
+        border-radius: 40px;
+    }
+
+    .divider {
+        width: 1px;
+        height: 100%;
+        background-color: $orange;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    &__text {
+        max-width: 430px;
+        width: 100%;
+        @include adaptive-value("font-size", 20, 16, 1);
+        line-height: calc(28 / 20);
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        @include adaptive-value("margin-top", 50, 30, 1);
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        width: 100%;
+
+        &-images {
+            width: 100%;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            // Fallback для старых iOS (до iOS 15)
+            padding-bottom: 66.666667%; // 250/375 * 100%
+            height: 0;
+
+            // Современные браузеры с поддержкой aspect-ratio
+            @supports (aspect-ratio: 1) {
+                padding-bottom: 0;
+                height: auto;
+                aspect-ratio: 375 / 250;
+            }
+
+            .gallery__image-after,
+            .gallery__image-before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    -webkit-object-fit: cover;
+                    display: block;
+                }
+            }
+
+            .gallery__image-after {
+                z-index: 1;
+            }
+
+            .gallery__image-before {
+                z-index: 2;
+                overflow: hidden;
+                clip-path: inset(0 50% 0 0);
+                -webkit-clip-path: inset(0 50% 0 0);
+                transition: clip-path 0.1s ease-out;
+                -webkit-transition: -webkit-clip-path 0.1s ease-out;
+            }
+
+            .slide-line {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                width: 16%;
+                height: 100%;
+                border: none;
+                background-color: transparent;
+                cursor: grab;
+                cursor: -webkit-grab;
+                padding: 0;
+                margin: 0;
+                z-index: 3;
+                touch-action: none;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                user-select: none;
+                transition: left 0.1s ease-out, transform 0.1s ease-out;
+                -webkit-transition: left 0.1s ease-out, -webkit-transform 0.1s ease-out;
+
+                &:active {
+                    cursor: grabbing;
+                    cursor: -webkit-grabbing;
+                }
+
+                &:focus {
+                    outline: 2px solid $orange;
+                    outline-offset: 2px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        &-title {
+            @include adaptive-value("font-size", 40, 18, 1);
+            line-height: calc(48 / 40);
+            font-weight: 500;
+            @include adaptive-value("margin-bottom", 16, 4, 1);
+        }
+
+        &-text {
+            @include adaptive-value("font-size", 20, 16, 1);
+            line-height: calc(28 / 20);
         }
     }
 }

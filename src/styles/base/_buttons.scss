@@ -94,8 +94,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
+        @include adaptive-value(" min-width", 40, 32, 1);
+        @include adaptive-value(" min-height", 40, 32, 1);
+        @include adaptive-value(" width", 40, 32, 1);
+        @include adaptive-value(" height", 40, 32, 1);
         border-radius: 50%;
         transition: all 0.3s ease;
     }
@@ -133,11 +135,11 @@
     }
 }
 
-.btn-icon--outline{
+.btn-icon--outline {
     border: none;
     padding: 0;
     color: $white;
-    
+
     .btn-icon-wrapper {
         background-color: $orange;
     }
