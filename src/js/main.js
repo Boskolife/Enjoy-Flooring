@@ -464,15 +464,86 @@ const initScrollAnimations = () => {
   });
 };
 
+// Services tabs
+const initServicesTabs = () => {
+  const tabButtons = document.querySelectorAll('.services_inner-button[role="tab"]');
+  const tabPanels = document.querySelectorAll('.services_inner-content-panel[role="tabpanel"]');
+
+  if (tabButtons.length === 0 || tabPanels.length === 0) return;
+
+  const switchTab = (buttonIndex) => {
+    // Remove active state from all buttons and panels
+    tabButtons.forEach((btn, index) => {
+      if (index === buttonIndex) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        btn.setAttribute('tabindex', '0');
+      } else {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+        btn.setAttribute('tabindex', '-1');
+      }
+    });
+
+    tabPanels.forEach((panel, index) => {
+      if (index === buttonIndex) {
+        panel.classList.add('active');
+        panel.removeAttribute('hidden');
+      } else {
+        panel.classList.remove('active');
+        panel.setAttribute('hidden', '');
+      }
+    });
+  };
+
+  // Handle button clicks
+  tabButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      switchTab(index);
+    });
+
+    // Handle keyboard navigation
+    button.addEventListener('keydown', (e) => {
+      let targetIndex = index;
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          targetIndex = index > 0 ? index - 1 : tabButtons.length - 1;
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          targetIndex = index < tabButtons.length - 1 ? index + 1 : 0;
+          break;
+        case 'Home':
+          e.preventDefault();
+          targetIndex = 0;
+          break;
+        case 'End':
+          e.preventDefault();
+          targetIndex = tabButtons.length - 1;
+          break;
+        default:
+          return;
+      }
+
+      switchTab(targetIndex);
+      tabButtons[targetIndex].focus();
+    });
+  });
+};
+
 // Initialize before/after slider
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initBeforeAfterSlider();
     initVideoPlayer();
     initScrollAnimations();
+    initServicesTabs();
   });
 } else {
   initBeforeAfterSlider();
   initVideoPlayer();
   initScrollAnimations();
+  initServicesTabs();
 }
