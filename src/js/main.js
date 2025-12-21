@@ -190,18 +190,33 @@ const initBeforeAfterSlider = () => {
 
     // Ensure unique IDs for accessibility
     const containerId = `gallery-images-${index + 1}`;
-    if (!container.id || (container.id.startsWith('gallery-images-') && container.id === 'gallery-images-2')) {
+    if (
+      !container.id ||
+      (container.id.startsWith('gallery-images-') &&
+        container.id === 'gallery-images-2')
+    ) {
       container.id = containerId;
     }
-    if (!slider.getAttribute('aria-controls') || slider.getAttribute('aria-controls') === 'gallery-images-2') {
+    if (
+      !slider.getAttribute('aria-controls') ||
+      slider.getAttribute('aria-controls') === 'gallery-images-2'
+    ) {
       slider.setAttribute('aria-controls', containerId);
     }
 
     // Improve aria-label with project title if available
-    const itemContent = container.closest('.gallery__item')?.querySelector('.gallery__item-title');
-    if (itemContent && slider.getAttribute('aria-label')?.includes('Lorem Ipsum')) {
+    const itemContent = container
+      .closest('.gallery__item')
+      ?.querySelector('.gallery__item-title');
+    if (
+      itemContent &&
+      slider.getAttribute('aria-label')?.includes('Lorem Ipsum')
+    ) {
       const projectTitle = itemContent.textContent.trim();
-      slider.setAttribute('aria-label', `Drag slider to compare before and after images for ${projectTitle}`);
+      slider.setAttribute(
+        'aria-label',
+        `Drag slider to compare before and after images for ${projectTitle}`,
+      );
     }
 
     let isDragging = false;
@@ -220,7 +235,12 @@ const initBeforeAfterSlider = () => {
       beforeImage.style.clipPath = clipPathValue;
       beforeImage.style.webkitClipPath = clipPathValue;
       slider.setAttribute('aria-valuenow', currentPercentage);
-      slider.setAttribute('aria-valuetext', `${currentPercentage}% - showing ${currentPercentage}% before and ${100 - currentPercentage}% after`);
+      slider.setAttribute(
+        'aria-valuetext',
+        `${currentPercentage}% - showing ${currentPercentage}% before and ${
+          100 - currentPercentage
+        }% after`,
+      );
     };
 
     const updateSlider = (clientX) => {
@@ -239,14 +259,19 @@ const initBeforeAfterSlider = () => {
       const roundedPercentage = Math.round(currentPercentage);
       slider.setAttribute('aria-valuenow', roundedPercentage);
       // Update aria-valuetext for better screen reader experience
-      slider.setAttribute('aria-valuetext', `${roundedPercentage}% - showing ${roundedPercentage}% before and ${100 - roundedPercentage}% after`);
+      slider.setAttribute(
+        'aria-valuetext',
+        `${roundedPercentage}% - showing ${roundedPercentage}% before and ${
+          100 - roundedPercentage
+        }% after`,
+      );
     };
 
     const handleStart = (clientX, isClickOnSlider = false) => {
       isDragging = true;
       slider.style.transition = 'none';
       beforeImage.style.transition = 'none';
-      
+
       if (isClickOnSlider) {
         // При клике на слайдер запоминаем смещение от центра
         const sliderRect = slider.getBoundingClientRect();
@@ -255,7 +280,7 @@ const initBeforeAfterSlider = () => {
       } else {
         dragOffset = 0;
       }
-      
+
       updateSlider(clientX);
     };
 
@@ -310,7 +335,9 @@ const initBeforeAfterSlider = () => {
       handleEnd();
     };
 
-    document.addEventListener('touchmove', touchMoveHandler, { passive: false });
+    document.addEventListener('touchmove', touchMoveHandler, {
+      passive: false,
+    });
     document.addEventListener('touchend', touchEndHandler);
 
     // Keyboard navigation
@@ -368,7 +395,10 @@ const initVideoPlayer = () => {
     if (!video.id || video.id === 'video-1') {
       video.id = videoId;
     }
-    if (!playButton.getAttribute('aria-controls') || playButton.getAttribute('aria-controls') === 'video-1') {
+    if (
+      !playButton.getAttribute('aria-controls') ||
+      playButton.getAttribute('aria-controls') === 'video-1'
+    ) {
       playButton.setAttribute('aria-controls', videoId);
     }
 
@@ -379,19 +409,22 @@ const initVideoPlayer = () => {
     const playVideo = () => {
       // Unmute video before playing (required for autoplay policies)
       video.muted = false;
-      video.play().then(() => {
-        // Show controls after video starts playing
-        video.setAttribute('controls', 'controls');
-        playButton.style.display = 'none';
-      }).catch((error) => {
-        console.error('Error playing video:', error);
-        // If autoplay fails, try with muted
-        video.muted = true;
-        video.play().then(() => {
+      video
+        .play()
+        .then(() => {
+          // Show controls after video starts playing
           video.setAttribute('controls', 'controls');
           playButton.style.display = 'none';
+        })
+        .catch((error) => {
+          console.error('Error playing video:', error);
+          // If autoplay fails, try with muted
+          video.muted = true;
+          video.play().then(() => {
+            video.setAttribute('controls', 'controls');
+            playButton.style.display = 'none';
+          });
         });
-      });
     };
 
     playButton.addEventListener('click', playVideo);
@@ -430,17 +463,23 @@ const initVideoPlayer = () => {
 // Scroll animations
 const initScrollAnimations = () => {
   // Check if user prefers reduced motion
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches;
   if (prefersReducedMotion) {
     // Show all elements immediately if reduced motion is preferred
-    const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate--fade-in, .scroll-animate--slide-up, .scroll-animate--slide-down, .scroll-animate--slide-left, .scroll-animate--slide-right, .scroll-animate--scale');
+    const animatedElements = document.querySelectorAll(
+      '.scroll-animate, .scroll-animate--fade-in, .scroll-animate--slide-up, .scroll-animate--slide-down, .scroll-animate--slide-left, .scroll-animate--slide-right, .scroll-animate--scale',
+    );
     animatedElements.forEach((element) => {
       element.classList.add('is-visible');
     });
     return;
   }
 
-  const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate--fade-in, .scroll-animate--slide-up, .scroll-animate--slide-down, .scroll-animate--slide-left, .scroll-animate--slide-right, .scroll-animate--scale');
+  const animatedElements = document.querySelectorAll(
+    '.scroll-animate, .scroll-animate--fade-in, .scroll-animate--slide-up, .scroll-animate--slide-down, .scroll-animate--slide-left, .scroll-animate--slide-right, .scroll-animate--scale',
+  );
 
   if (animatedElements.length === 0) return;
 
@@ -466,8 +505,12 @@ const initScrollAnimations = () => {
 
 // Services tabs
 const initServicesTabs = () => {
-  const tabButtons = document.querySelectorAll('.services_inner-button[role="tab"]');
-  const tabPanels = document.querySelectorAll('.services_inner-content-panel[role="tabpanel"]');
+  const tabButtons = document.querySelectorAll(
+    '.services_inner-button[role="tab"]',
+  );
+  const tabPanels = document.querySelectorAll(
+    '.services_inner-content-panel[role="tabpanel"]',
+  );
 
   if (tabButtons.length === 0 || tabPanels.length === 0) return;
 
@@ -533,6 +576,51 @@ const initServicesTabs = () => {
   });
 };
 
+function initGalleryReadMore() {
+  const readMoreButtons = document.querySelectorAll('.gallery__item-btn');
+  const readMoreTexts = document.querySelectorAll('.gallery__item-text');
+  readMoreButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      if (readMoreTexts[index].classList.contains('is-expanded')) {
+        readMoreTexts[index].classList.remove('is-expanded');
+        button.innerHTML = 'Read More';
+      } else {
+        readMoreTexts[index].classList.add('is-expanded');
+        button.innerHTML = 'Read Less';
+      }
+    });
+  });
+}
+
+// Custom file input with placeholder
+const initCustomFileInput = () => {
+  const fileInput = document.getElementById('contact-photo');
+  const fileText = document.querySelector('.contact_form-file-text');
+  const fileName = document.querySelector('.contact_form-file-name');
+  const fileButton = document.querySelector('.contact_form-file-button');
+
+  if (!fileInput || !fileText || !fileName) return;
+
+  fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      fileText.style.display = 'none';
+      fileName.textContent = file.name;
+      fileName.style.display = 'block';
+      if (fileButton) {
+        fileButton.style.display = 'none';
+      }
+    } else {
+      fileText.style.display = 'block';
+      fileName.textContent = '';
+      fileName.style.display = 'none';
+      if (fileButton) {
+        fileButton.style.display = 'inline-flex';
+      }
+    }
+  });
+};
+
 // Initialize before/after slider
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
@@ -540,10 +628,14 @@ if (document.readyState === 'loading') {
     initVideoPlayer();
     initScrollAnimations();
     initServicesTabs();
+    initGalleryReadMore();
+    initCustomFileInput();
   });
 } else {
   initBeforeAfterSlider();
   initVideoPlayer();
   initScrollAnimations();
   initServicesTabs();
+  initGalleryReadMore();
+  initCustomFileInput();
 }

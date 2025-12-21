@@ -6,6 +6,10 @@ body {
     background-color: #F1F7F7;
 }
 
+#wrapper {
+    overflow: hidden;
+}
+
 .section-tip {
     @include adaptive-value("font-size", 16, 12, 1);
     font-weight: 500;
@@ -991,6 +995,11 @@ body {
                 }
             }
 
+            #contact-comment-label,
+            #contact-photo-label {
+                width: 100%;
+            }
+
             input {
                 width: 100%;
                 border: none;
@@ -1000,9 +1009,104 @@ body {
 
                 @include media ("<tablet") {
                     padding-left: 0;
-
                 }
             }
+
+            textarea {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #3D3D3D;
+                padding: 13px 15px;
+                height: 150px;
+
+                @include media ("<tablet") {
+                    padding-left: 0;
+                }
+            }
+
+            #contact-photo-label {
+                position: relative;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                border: none;
+                border-bottom: 1px solid #3D3D3D;
+                padding: 13px 15px;
+                min-height: 48px;
+                outline: none;
+
+                @include media ("<tablet") {
+                    padding-left: 0;
+                }
+
+                input[type="file"] {
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                .contact_form-file-text {
+                    color: $placeholder-color;
+                    @include adaptive-value("font-size", 16, 14, 1);
+                    pointer-events: none;
+                    flex: 1;
+                }
+
+                .contact_form-file-name {
+                    color: $black;
+                    @include adaptive-value("font-size", 16, 14, 1);
+                    margin-left: 8px;
+                    flex-shrink: 0;
+                    max-width: 50%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: none;
+                }
+
+                .contact_form-file-button {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 8px 16px;
+                    background-color: $green;
+                    color: $white;
+                    border-radius: 8px;
+                    @include adaptive-value("font-size", 14, 12, 1);
+                    font-weight: 500;
+                    margin-left: auto;
+                    flex-shrink: 0;
+                    pointer-events: none;
+                    transition: background-color 0.2s ease;
+
+                    @include media ("<tablet") {
+                        padding: 6px 12px;
+                    }
+                }
+
+                &:has(input[type="file"]:focus) {
+                    outline: 2px solid $form-element-focus-border-color;
+                    outline-offset: 2px;
+                }
+
+                &:has(input[type="file"]:not(:disabled):hover) {
+                    border-bottom-color: $form-element-focus-border-color;
+
+                    .contact_form-file-button {
+                        background-color: $green-light;
+                    }
+                }
+            }
+
+
         }
 
         &-checkbox {
@@ -1013,6 +1117,7 @@ body {
             font-weight: 500;
             @include adaptive-value("font-size", 14, 12, 1);
             line-height: 140%;
+            width: max-content;
         }
 
         .btn {
@@ -1159,7 +1264,6 @@ body {
             position: relative;
             overflow: hidden;
             border-radius: 24px;
-            // Fallback для старых iOS (до iOS 15)
             padding-bottom: 66.666667%; // 250/375 * 100%
             height: 525px;
 
@@ -1167,7 +1271,6 @@ body {
                 width: 100%;
             }
 
-            // Современные браузеры с поддержкой aspect-ratio
             @supports (aspect-ratio: 1) {
                 padding-bottom: 0;
                 height: 525px;
@@ -1273,6 +1376,33 @@ body {
         &-text {
             @include adaptive-value("font-size", 20, 16, 1);
             line-height: calc(28 / 20);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+
+            &.is-expanded {
+                -webkit-line-clamp: unset;
+                -webkit-box-orient: unset;
+                overflow: visible;
+            }
+        }
+
+        &-btn {
+            @include adaptive-value("font-size", 16, 14, 1);
+            line-height: calc(24 / 16);
+            font-weight: 500;
+            color: $orange;
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            margin-top: 12px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $green;
+            }
         }
     }
 }

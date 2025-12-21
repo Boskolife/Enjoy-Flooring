@@ -12,429 +12,462 @@
 </head>
 
 <body>
-  {{> header }}
-  <main>
-    <section class="hero">
-      <img src="/images/hero-bg.jpg" alt="" class="hero_bg" width="1920" height="1080"
-        aria-hidden="true">
-      <div class="container">
-        <div class="hero_inner">
-          <span class="section-tip scroll-animate--fade-in">100% Managed high-end renovations</span>
-          <div class="hero_content">
-            <h1 class="scroll-animate--slide-up">Expert Wood Floor Repair & <span>Restoration in
-                London</span></h1>
-            <div class="hero_content-text scroll-animate--slide-up">
-              <a href="tel:+1234567890" class="btn-icon btn-icon--white"
-                aria-label="Contact us via WhatsApp">
-                WhatsApp Us
-                <span class="btn-icon-wrapper">
-                  <img src="./images/arrow-up-right.svg" alt="" aria-hidden="true">
-                </span>
-              </a>
-              <p>From single-board replacement to full sanding & refinishing - we bring damaged,
-                aged, or uneven wooden floors back to life.</p>
+  <div id="wrapper">
+    {{> header }}
+    <main>
+      <section class="hero">
+        <img src="/images/hero-bg.jpg" alt="" class="hero_bg" width="1920" height="1080"
+          aria-hidden="true">
+        <div class="container">
+          <div class="hero_inner">
+            <span class="section-tip scroll-animate--fade-in">100% Managed high-end
+              renovations</span>
+            <div class="hero_content">
+              <h1 class="scroll-animate--slide-up">Expert Wood Floor Repair & <span>Restoration in
+                  London</span></h1>
+              <div class="hero_content-text scroll-animate--slide-up">
+                <a href="tel:+1234567890" class="btn-icon btn-icon--white"
+                  aria-label="Contact us via WhatsApp">
+                  WhatsApp Us
+                  <span class="btn-icon-wrapper">
+                    <img src="./images/arrow-up-right.svg" alt="" aria-hidden="true">
+                  </span>
+                </a>
+                <p>From single-board replacement to full sanding & refinishing - we bring damaged,
+                  aged, or uneven wooden floors back to life.</p>
+              </div>
             </div>
-          </div>
 
-        </div>
-      </div>
-    </section>
-    <section class="services" aria-labelledby="services-title" id="services">
-      <div class="container">
-        <span class="section-tip scroll-animate--fade-in">02 / What we do</span>
-        <h2 class="section-title scroll-animate--slide-up" id="services-title">Our Services</h2>
-        <p class="section-description scroll-animate--slide-up">Complete Flooring Solutions in
-          London & South England We
-          provide a comprehensive range of flooring services - from installation and restoration to
-          heating, insulation, repairs and design consulting.</p>
-        <div class="services_inner">
-          <div class="services_inner-buttons scroll-animate--slide-right" role="tablist" aria-label="Service categories">
-            <button class="services_inner-button active" type="button" role="tab" aria-selected="true"
-              aria-controls="tab-panel-1" id="tab-1" tabindex="0">Wood Floor Repair</button>
-            <button class="services_inner-button" type="button" role="tab" aria-selected="false"
-              aria-controls="tab-panel-2" id="tab-2" tabindex="-1">Board Replacement</button>
-            <button class="services_inner-button" type="button" role="tab" aria-selected="false"
-              aria-controls="tab-panel-3" id="tab-3" tabindex="-1">Sanding & Refinishing</button>
-            <button class="services_inner-button" type="button" role="tab" aria-selected="false"
-              aria-controls="tab-panel-4" id="tab-4" tabindex="-1">Parquet Repair & Restoration</button>
-            <button class="services_inner-button" type="button" role="tab" aria-selected="false"
-              aria-controls="tab-panel-5" id="tab-5" tabindex="-1">Water Damage Repair</button>
-            <button class="services_inner-button" type="button" role="tab" aria-selected="false"
-              aria-controls="tab-panel-6" id="tab-6" tabindex="-1">Subfloor Repairs</button>
-          </div>
-          <div class="services_inner-content scroll-animate--slide-left">
-            <div class="services_inner-content-panel active" id="tab-panel-1" role="tabpanel"
-              aria-labelledby="tab-1">
-              <div class="services_inner-content-text">
-                <h3>Wood Floor Repair</h3>
-                <p>Damaged boards, loose planks, scratches, movement, squeaks, gaps — we repair
-                  everything.</p>
-                <a href="#" class="btn btn-primary"
-                  aria-label="Learn more about Wood Floor Repair">Book your free consultation</a>
-              </div>
-              <div class="services_inner-content-images">
-                <img src="./images/hero-bg.jpg" alt="Wood floor repair service">
-              </div>
-            </div>
-            <div class="services_inner-content-panel" id="tab-panel-2" role="tabpanel"
-              aria-labelledby="tab-2" hidden>
-              <div class="services_inner-content-text">
-                <h3>Board Replacement</h3>
-                <p>Individual board replacement with perfect color matching and seamless integration.
-                  We replace damaged or worn boards while maintaining the floor's original appearance.</p>
-                <a href="#" class="btn btn-primary"
-                  aria-label="Learn more about Board Replacement">Book your free consultation</a>
-              </div>
-              <div class="services_inner-content-images">
-                <img src="./images/hero-bg.jpg" alt="Board replacement service">
-              </div>
-            </div>
-            <div class="services_inner-content-panel" id="tab-panel-3" role="tabpanel"
-              aria-labelledby="tab-3" hidden>
-              <div class="services_inner-content-text">
-                <h3>Sanding & Refinishing</h3>
-                <p>Professional sanding and refinishing to restore your wood floor's natural beauty.
-                  We remove scratches, stains, and wear, then apply a protective finish for lasting
-                  results.</p>
-                <a href="#" class="btn btn-primary"
-                  aria-label="Learn more about Sanding & Refinishing">Book your free consultation</a>
-              </div>
-              <div class="services_inner-content-images">
-                <img src="./images/hero-bg.jpg" alt="Sanding and refinishing service">
-              </div>
-            </div>
-            <div class="services_inner-content-panel" id="tab-panel-4" role="tabpanel"
-              aria-labelledby="tab-4" hidden>
-              <div class="services_inner-content-text">
-                <h3>Parquet Repair & Restoration</h3>
-                <p>Specialized parquet floor restoration preserving intricate patterns and historical
-                  character. Expert repair of damaged blocks and complete restoration of vintage
-                  parquet floors.</p>
-                <a href="#" class="btn btn-primary"
-                  aria-label="Learn more about Parquet Repair & Restoration">Book your free consultation</a>
-              </div>
-              <div class="services_inner-content-images">
-                <img src="./images/hero-bg.jpg" alt="Parquet repair and restoration service">
-              </div>
-            </div>
-            <div class="services_inner-content-panel" id="tab-panel-5" role="tabpanel"
-              aria-labelledby="tab-5" hidden>
-              <div class="services_inner-content-text">
-                <h3>Water Damage Repair</h3>
-                <p>Emergency water damage restoration for wood floors. Quick response to prevent
-                  further damage, professional drying, and complete restoration of water-affected
-                  flooring.</p>
-                <a href="#" class="btn btn-primary"
-                  aria-label="Learn more about Water Damage Repair">Book your free consultation</a>
-              </div>
-              <div class="services_inner-content-images">
-                <img src="./images/hero-bg.jpg" alt="Water damage repair service">
-              </div>
-            </div>
-            <div class="services_inner-content-panel" id="tab-panel-6" role="tabpanel"
-              aria-labelledby="tab-6" hidden>
-              <div class="services_inner-content-text">
-                <h3>Subfloor Repairs</h3>
-                <p>Comprehensive subfloor repair and preparation services. We fix structural issues,
-                  level uneven surfaces, and ensure a perfect foundation for your new or existing
-                  wood flooring.</p>
-                <a href="#" class="btn btn-primary"
-                  aria-label="Learn more about Subfloor Repairs">Book your free consultation</a>
-              </div>
-              <div class="services_inner-content-images">
-                <img src="./images/hero-bg.jpg" alt="Subfloor repairs service">
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="who-we-are" aria-labelledby="who-we-are-title">
-      <div class="container">
-        <div class="who-we-are_inner">
-          <div class="who-we-are_content-top">
-            <span class="section-tip scroll-animate--fade-in">03 / Who we are</span>
-            <h2 class="visually-hidden" id="who-we-are-title">Who we are</h2>
-            <p class="scroll-animate--slide-up">Premium <strong>flooring installation and
-                restoration in London & South
-                England</strong>
-              - bringing
-              <strong>beauty, comfort & quality</strong> to your home. We don't simply install
-              floors -
-              we craft
-              comfort, beauty, and happiness under your feet
-            </p>
-          </div>
-          <div class="who-we-are_content-bottom">
-            <div class="who-we-are_content-bottom-image scroll-animate--slide-right">
-              <img src="/images/who-we-are-1.png" alt="" aria-hidden="true">
+      </section>
+      <section class="services" aria-labelledby="services-title" id="services">
+        <div class="container">
+          <span class="section-tip scroll-animate--fade-in">02 / What we do</span>
+          <h2 class="section-title scroll-animate--slide-up" id="services-title">Our Services</h2>
+          <p class="section-description scroll-animate--slide-up">Complete Flooring Solutions in
+            London & South England We
+            provide a comprehensive range of flooring services - from installation and restoration
+            to
+            heating, insulation, repairs and design consulting.</p>
+          <div class="services_inner">
+            <div class="services_inner-buttons scroll-animate--slide-right" role="tablist"
+              aria-label="Service categories">
+              <button class="services_inner-button active" type="button" role="tab"
+                aria-selected="true" aria-controls="tab-panel-1" id="tab-1" tabindex="0">Wood Floor
+                Repair</button>
+              <button class="services_inner-button" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-panel-2" id="tab-2" tabindex="-1">Board Replacement</button>
+              <button class="services_inner-button" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-panel-3" id="tab-3" tabindex="-1">Sanding & Refinishing</button>
+              <button class="services_inner-button" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-panel-4" id="tab-4" tabindex="-1">Parquet Repair &
+                Restoration</button>
+              <button class="services_inner-button" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-panel-5" id="tab-5" tabindex="-1">Water Damage Repair</button>
+              <button class="services_inner-button" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-panel-6" id="tab-6" tabindex="-1">Subfloor Repairs</button>
             </div>
-            <div class="who-we-are_content-bottom-card scroll-animate--scale">
-              <img class="card-dots" src="/images/dots.svg" alt="" width="430" height="430"
-                aria-hidden="true">
-              <p class="card-title">We're not just builders - we're your renovation partners.</p>
-              <div class="card-value-wrapper" aria-label="20 plus years of experience">
-                <span class="card-value" aria-hidden="true">20+</span>
-                <p class="card-description">years of experience</p>
-              </div>
-            </div>
-            <div class="who-we-are_content-bottom-text scroll-animate--slide-left">
-              <p>At Enjoy Flooring, every step you take at home should feel extraordinary. Let us
-                create a floor that looks stunning, feels perfect, and adds long-term value to your
-                property.</p>
-              <ul>
-                <li>Premium craftsmanship & materials</li>
-                <li>Designed for comfort, beauty, and durability</li>
-              </ul>
-              <a href="#contact" class="btn btn_primary" aria-label="Get your free quote">Get Your
-                Free Quote</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="about-us" aria-labelledby="about-us-title">
-      <div class="container">
-        <div class="about-us_heading scroll-animate--fade-in">
-          <h2 class="section-title" id="about-us-title">About us</h2>
-          <img class="about-us_heading-image" src="./images/arrow-green.svg" alt=""
-            aria-hidden="true">
-          <span class="section-title" aria-hidden="true">About us</span>
-        </div>
-        <div class="about-us_inner">
-          <p class="about-us_text scroll-animate--slide-up">Dedicated Wood Floor Restoration
-            Specialist. For over two
-            decades, we've been restoring
-            wooden floors in London's Victorian, Edwardian and modern homes. We focus on one thing
-            and one thing only: <strong>repairing and restoring wooden floors to the highest
-              standard.</strong> No
-            vinyl. No tiles. No laminate. <strong>Just wood - mastered to perfection.</strong></p>
-          <div class="about-us_labels">
-            <div class="about-us_label scroll-animate--slide-up">
-              <div class="about-us_label-image">
-                <img src="./images/label-icon-1.svg" alt="" aria-hidden="true">
-              </div>
-              <div class="about-us_label-text">
-                <strong>Comfort</strong>
-                <p>we create spaces that feel as good as they look</p>
-              </div>
-            </div>
-            <div class="about-us_label scroll-animate--slide-up">
-              <div class="about-us_label-image">
-                <img src="./images/label-icon-2.svg" alt="" aria-hidden="true">
-              </div>
-              <div class="about-us_label-text">
-                <strong>Craftsmanship</strong>
-                <p>every detail finished to perfection</p>
-              </div>
-            </div>
-            <div class="about-us_label scroll-animate--slide-up">
-              <div class="about-us_label-image">
-                <img src="./images/label-icon-3.svg" alt="" aria-hidden="true">
-              </div>
-              <div class="about-us_label-text">
-                <strong>Customer Satisfaction</strong>
-                <p>80% of our clients come through</p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-    <section class="testimonials" aria-labelledby="testimonials-title">
-      <div class="container">
-        <div class="testimonials_heading scroll-animate--fade-in">
-          <h2 class="section-title" id="testimonials-title">Testimonials</h2>
-          <img class="testimonials_heading-image" src="./images/arrow-green.svg" alt=""
-            aria-hidden="true">
-          <span class="section-title" aria-hidden="true">Testimonials</span>
-        </div>
-        <div class="testimonials_inner">
-          <img class="testimonials_image scroll-animate--slide-right"
-            src="./images/testimonials-img.png" alt="" width="630" height="630" aria-hidden="true">
-          <h3 class="testimonials_subtitle scroll-animate--slide-up">What Our Customers Say About Us
-          </h3>
-          <div class="testimonials_slider-wrapper">
-            <div class="swiper testimonials_slider" role="region"
-              aria-label="Customer testimonials">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <article class="testimonials_slide">
-                    <img class="testimonials_slide-dots" src="./images/dots-2.svg" alt=""
-                      width="460" height="460" aria-hidden="true">
-                    <img class="testimonials_slide-quote" src="./images/quote.svg" alt="" width="53"
-                      height="53" aria-hidden="true">
-                    <blockquote class="testimonials_slide-text">
-                      <p>Enjoy Renovation transformed our outdated
-                        Victorian kitchen into a stunning
-                        modern space. The team was professional, reliable, and completed the work
-                        exactly
-                        on schedule. The attention to detail was exceptional, and they managed
-                        everything
-                        so we didn't have to worry about a thing.</p>
-                    </blockquote>
-                    <footer class="testimonials_slide-author">
-                      <p>Sarah & Michael</p>
-                      <span>Clapham</span>
-                    </footer>
-                  </article>
+            <div class="services_inner-content scroll-animate--slide-left">
+              <div class="services_inner-content-panel active" id="tab-panel-1" role="tabpanel"
+                aria-labelledby="tab-1">
+                <div class="services_inner-content-text">
+                  <h3>Wood Floor Repair</h3>
+                  <p>Damaged boards, loose planks, scratches, movement, squeaks, gaps — we repair
+                    everything.</p>
+                  <a href="#" class="btn btn-primary"
+                    aria-label="Learn more about Wood Floor Repair">Book your free consultation</a>
                 </div>
-                <div class="swiper-slide">
-                  <article class="testimonials_slide">
-                    <img class="testimonials_slide-dots" src="./images/dots-2.svg" alt=""
-                      width="460" height="460" aria-hidden="true">
-                    <img class="testimonials_slide-quote" src="./images/quote.svg" alt="" width="53"
-                      height="53" aria-hidden="true">
-                    <blockquote class="testimonials_slide-text">
-                      <p>From start to finish, the service was
-                        outstanding. They handled our complete bathroom renovation with such care
-                        and
-                        precision. The quality of workmanship exceeded our expectations, and they
-                        were
-                        always transparent about timelines and costs.</p>
-                    </blockquote>
-                    <footer class="testimonials_slide-author">
-                      <p>Emma Richardson</p>
-                      <span>Fulham</span>
-                    </footer>
-                  </article>
+                <div class="services_inner-content-images">
+                  <img src="./images/hero-bg.jpg" alt="Wood floor repair service">
                 </div>
-                <div class="swiper-slide">
-                  <article class="testimonials_slide">
-                    <img class="testimonials_slide-dots" src="./images/dots-2.svg" alt=""
-                      width="460" height="460" aria-hidden="true">
-                    <img class="testimonials_slide-quote" src="./images/quote.svg" alt="" width="53"
-                      height="53" aria-hidden="true">
-                    <blockquote class="testimonials_slide-text">
-                      <p>Enjoy Renovation transformed our outdated
-                        Victorian kitchen into a stunning
-                        modern space. The team was professional, reliable, and completed the work
-                        exactly
-                        on schedule. The attention to detail was exceptional, and they managed
-                        everything
-                        so we didn't have to worry about a thing.</p>
-                    </blockquote>
-                    <footer class="testimonials_slide-author">
-                      <p>Sarah & Michael</p>
-                      <span>Clapham</span>
-                    </footer>
-                  </article>
+              </div>
+              <div class="services_inner-content-panel" id="tab-panel-2" role="tabpanel"
+                aria-labelledby="tab-2" hidden>
+                <div class="services_inner-content-text">
+                  <h3>Board Replacement</h3>
+                  <p>Individual board replacement with perfect color matching and seamless
+                    integration.
+                    We replace damaged or worn boards while maintaining the floor's original
+                    appearance.</p>
+                  <a href="#" class="btn btn-primary"
+                    aria-label="Learn more about Board Replacement">Book your free consultation</a>
                 </div>
-                <div class="swiper-slide">
-                  <article class="testimonials_slide">
-                    <img class="testimonials_slide-dots" src="./images/dots-2.svg" alt=""
-                      width="460" height="460" aria-hidden="true">
-                    <img class="testimonials_slide-quote" src="./images/quote.svg" alt="" width="53"
-                      height="53" aria-hidden="true">
-                    <blockquote class="testimonials_slide-text">
-                      <p>From start to finish, the service was
-                        outstanding. They handled our complete bathroom renovation with such care
-                        and
-                        precision. The quality of workmanship exceeded our expectations, and they
-                        were
-                        always transparent about timelines and costs.</p>
-                    </blockquote>
-                    <footer class="testimonials_slide-author">
-                      <p>Emma Richardson</p>
-                      <span>Fulham</span>
-                    </footer>
-                  </article>
+                <div class="services_inner-content-images">
+                  <img src="./images/hero-bg.jpg" alt="Board replacement service">
+                </div>
+              </div>
+              <div class="services_inner-content-panel" id="tab-panel-3" role="tabpanel"
+                aria-labelledby="tab-3" hidden>
+                <div class="services_inner-content-text">
+                  <h3>Sanding & Refinishing</h3>
+                  <p>Professional sanding and refinishing to restore your wood floor's natural
+                    beauty.
+                    We remove scratches, stains, and wear, then apply a protective finish for
+                    lasting
+                    results.</p>
+                  <a href="#" class="btn btn-primary"
+                    aria-label="Learn more about Sanding & Refinishing">Book your free
+                    consultation</a>
+                </div>
+                <div class="services_inner-content-images">
+                  <img src="./images/hero-bg.jpg" alt="Sanding and refinishing service">
+                </div>
+              </div>
+              <div class="services_inner-content-panel" id="tab-panel-4" role="tabpanel"
+                aria-labelledby="tab-4" hidden>
+                <div class="services_inner-content-text">
+                  <h3>Parquet Repair & Restoration</h3>
+                  <p>Specialized parquet floor restoration preserving intricate patterns and
+                    historical
+                    character. Expert repair of damaged blocks and complete restoration of vintage
+                    parquet floors.</p>
+                  <a href="#" class="btn btn-primary"
+                    aria-label="Learn more about Parquet Repair & Restoration">Book your free
+                    consultation</a>
+                </div>
+                <div class="services_inner-content-images">
+                  <img src="./images/hero-bg.jpg" alt="Parquet repair and restoration service">
+                </div>
+              </div>
+              <div class="services_inner-content-panel" id="tab-panel-5" role="tabpanel"
+                aria-labelledby="tab-5" hidden>
+                <div class="services_inner-content-text">
+                  <h3>Water Damage Repair</h3>
+                  <p>Emergency water damage restoration for wood floors. Quick response to prevent
+                    further damage, professional drying, and complete restoration of water-affected
+                    flooring.</p>
+                  <a href="#" class="btn btn-primary"
+                    aria-label="Learn more about Water Damage Repair">Book your free
+                    consultation</a>
+                </div>
+                <div class="services_inner-content-images">
+                  <img src="./images/hero-bg.jpg" alt="Water damage repair service">
+                </div>
+              </div>
+              <div class="services_inner-content-panel" id="tab-panel-6" role="tabpanel"
+                aria-labelledby="tab-6" hidden>
+                <div class="services_inner-content-text">
+                  <h3>Subfloor Repairs</h3>
+                  <p>Comprehensive subfloor repair and preparation services. We fix structural
+                    issues,
+                    level uneven surfaces, and ensure a perfect foundation for your new or existing
+                    wood flooring.</p>
+                  <a href="#" class="btn btn-primary"
+                    aria-label="Learn more about Subfloor Repairs">Book your free consultation</a>
+                </div>
+                <div class="services_inner-content-images">
+                  <img src="./images/hero-bg.jpg" alt="Subfloor repairs service">
                 </div>
               </div>
             </div>
           </div>
-          <div class="testimonials_slider-buttons">
-            <button type="button" class="swiper-button-prev" aria-label="Previous testimonial">
-              <img src="./images/arrow-right.svg" alt="" aria-hidden="true">
-            </button>
-            <button type="button" class="swiper-button-next" aria-label="Next testimonial">
-              <img src="./images/arrow-right.svg" alt="" aria-hidden="true">
-            </button>
-          </div>
         </div>
-      </div>
-    </section>
-    <section class="contact">
-      <img class="contact_bg" src="./images/dots-3.png" alt="" width="714" height="714"
-        aria-hidden="true">
-      <div class="container">
-        <div class="contact_inner">
-          <div class="contact_content">
-            <h2 class="section-title scroll-animate--slide-up">Get in touch</h2>
-            <div class="contact_items">
-              <div class="contact_item scroll-animate--slide-up">
-                <img src="./images/mail.svg" alt="" aria-hidden="true">
-                <div class="contact_item-content">
-                  <p>Email</p>
-                  <a href="mailto:Vitalii@enjoyrenovation.co.uk">Vitalii@enjoyrenovation.co.uk</a>
-                </div>
-              </div>
-              <div class="contact_item scroll-animate--slide-up">
-                <img src="./images/call.svg" alt="" aria-hidden="true">
-                <div class="contact_item-content">
-                  <p>Phone number</p>
-                  <a href="tel:+447508094795">+44 750 809 4795</a>
-                </div>
-              </div>
+      </section>
+      <section class="who-we-are" aria-labelledby="who-we-are-title">
+        <div class="container">
+          <div class="who-we-are_inner">
+            <div class="who-we-are_content-top">
+              <span class="section-tip scroll-animate--fade-in">03 / Who we are</span>
+              <h2 class="visually-hidden" id="who-we-are-title">Who we are</h2>
+              <p class="scroll-animate--slide-up">Premium <strong>flooring installation and
+                  restoration in London & South
+                  England</strong>
+                - bringing
+                <strong>beauty, comfort & quality</strong> to your home. We don't simply install
+                floors -
+                we craft
+                comfort, beauty, and happiness under your feet
+              </p>
             </div>
-            <div class="contact_founders">
-              <div class="contact_founder scroll-animate--fade-in">
-                <img class="contact_founder-image" src="./images/director-1.png" alt=""
+            <div class="who-we-are_content-bottom">
+              <div class="who-we-are_content-bottom-image scroll-animate--slide-right">
+                <img src="/images/who-we-are-1.png" alt="" aria-hidden="true">
+              </div>
+              <div class="who-we-are_content-bottom-card scroll-animate--scale">
+                <img class="card-dots" src="/images/dots.svg" alt="" width="430" height="430"
                   aria-hidden="true">
-                <div class="contact_founder-content">
-                  <p>Vitaliy Sydora</p>
-                  <span>Director</span>
+                <p class="card-title">We're not just builders - we're your renovation partners.</p>
+                <div class="card-value-wrapper" aria-label="20 plus years of experience">
+                  <span class="card-value" aria-hidden="true">20+</span>
+                  <p class="card-description">years of experience</p>
                 </div>
               </div>
-              <div class="contact_founder scroll-animate--fade-in">
-                <img src="./images/director-2.png" alt="" aria-hidden="true">
-                <div class="contact_founder-content">
-                  <p>Roman Semko</p>
-                  <span>Marketing Director</span>
-                </div>
+              <div class="who-we-are_content-bottom-text scroll-animate--slide-left">
+                <p>At Enjoy Flooring, every step you take at home should feel extraordinary. Let us
+                  create a floor that looks stunning, feels perfect, and adds long-term value to
+                  your
+                  property.</p>
+                <ul>
+                  <li>Premium craftsmanship & materials</li>
+                  <li>Designed for comfort, beauty, and durability</li>
+                </ul>
+                <a href="#contact" class="btn btn_primary" aria-label="Get your free quote">Get Your
+                  Free Quote</a>
               </div>
             </div>
-            <div class="contact_media scroll-animate--fade-in">
-              <span>Follow us:</span>
-              <div class="contact_media-items">
-                <a href="#" class="contact_media-item" target="_blank" rel="noopener noreferrer"
-                  aria-label="Follow us on Instagram">
-                  <img src="./images/instagram.svg" alt="" aria-hidden="true">
-                </a>
-                <a href="#" class="contact_media-item" target="_blank" rel="noopener noreferrer"
-                  aria-label="Follow us on Facebook">
-                  <img src="./images/facebook.svg" alt="" aria-hidden="true">
-                </a>
-                <a href="#" class="contact_media-item" target="_blank" rel="noopener noreferrer"
-                  aria-label="Follow us on LinkedIn">
-                  <img src="./images/linkedin.svg" alt="" aria-hidden="true">
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="contact_form scroll-animate--slide-left">
-            <h3 class="contact_form-title">Send a message</h3>
-            <form action="#" class="contact_form-body">
-              <div class="contact_form-inputs">
-                <label for="contact-name">
-                  <input type="text" id="contact-name" name="name" placeholder="Name" required>
-                </label>
-                <label for="contact-email">
-                  <input type="email" id="contact-email" name="email" placeholder="Email" required>
-                </label>
-                <label for="contact-phone">
-                  <input type="tel" id="contact-phone" name="phone" placeholder="Phone Number">
-                </label>
-              </div>
-              <label class="contact_form-checkbox" for="checkbox"><input type="checkbox"
-                  id="checkbox">Lorem ipsum dolor sit amet</label>
-              <button type="submit" class="btn btn_primary">Send message</button>
-            </form>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-  {{> footer }}
+      </section>
+      <section class="about-us" aria-labelledby="about-us-title">
+        <div class="container">
+          <div class="about-us_heading scroll-animate--fade-in">
+            <h2 class="section-title" id="about-us-title">About us</h2>
+            <img class="about-us_heading-image" src="./images/arrow-green.svg" alt=""
+              aria-hidden="true">
+            <span class="section-title" aria-hidden="true">About us</span>
+          </div>
+          <div class="about-us_inner">
+            <p class="about-us_text scroll-animate--slide-up">Dedicated Wood Floor Restoration
+              Specialist. For over two
+              decades, we've been restoring
+              wooden floors in London's Victorian, Edwardian and modern homes. We focus on one thing
+              and one thing only: <strong>repairing and restoring wooden floors to the highest
+                standard.</strong> No
+              vinyl. No tiles. No laminate. <strong>Just wood - mastered to perfection.</strong></p>
+            <div class="about-us_labels">
+              <div class="about-us_label scroll-animate--slide-up">
+                <div class="about-us_label-image">
+                  <img src="./images/label-icon-1.svg" alt="" aria-hidden="true">
+                </div>
+                <div class="about-us_label-text">
+                  <strong>Comfort</strong>
+                  <p>we create spaces that feel as good as they look</p>
+                </div>
+              </div>
+              <div class="about-us_label scroll-animate--slide-up">
+                <div class="about-us_label-image">
+                  <img src="./images/label-icon-2.svg" alt="" aria-hidden="true">
+                </div>
+                <div class="about-us_label-text">
+                  <strong>Craftsmanship</strong>
+                  <p>every detail finished to perfection</p>
+                </div>
+              </div>
+              <div class="about-us_label scroll-animate--slide-up">
+                <div class="about-us_label-image">
+                  <img src="./images/label-icon-3.svg" alt="" aria-hidden="true">
+                </div>
+                <div class="about-us_label-text">
+                  <strong>Customer Satisfaction</strong>
+                  <p>80% of our clients come through</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <section class="testimonials" aria-labelledby="testimonials-title">
+        <div class="container">
+          <div class="testimonials_heading scroll-animate--fade-in">
+            <h2 class="section-title" id="testimonials-title">Testimonials</h2>
+            <img class="testimonials_heading-image" src="./images/arrow-green.svg" alt=""
+              aria-hidden="true">
+            <span class="section-title" aria-hidden="true">Testimonials</span>
+          </div>
+          <div class="testimonials_inner">
+            <img class="testimonials_image scroll-animate--slide-right"
+              src="./images/testimonials-img.png" alt="" width="630" height="630"
+              aria-hidden="true">
+            <h3 class="testimonials_subtitle scroll-animate--slide-up">What Our Customers Say About
+              Us
+            </h3>
+            <div class="testimonials_slider-wrapper">
+              <div class="swiper testimonials_slider" role="region"
+                aria-label="Customer testimonials">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <article class="testimonials_slide">
+                      <img class="testimonials_slide-dots" src="./images/dots-2.svg" alt=""
+                        width="460" height="460" aria-hidden="true">
+                      <img class="testimonials_slide-quote" src="./images/quote.svg" alt=""
+                        width="53" height="53" aria-hidden="true">
+                      <blockquote class="testimonials_slide-text">
+                        <p>Enjoy Renovation transformed our outdated
+                          Victorian kitchen into a stunning
+                          modern space. The team was professional, reliable, and completed the work
+                          exactly
+                          on schedule. The attention to detail was exceptional, and they managed
+                          everything
+                          so we didn't have to worry about a thing.</p>
+                      </blockquote>
+                      <footer class="testimonials_slide-author">
+                        <p>Sarah & Michael</p>
+                        <span>Clapham</span>
+                      </footer>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="testimonials_slide">
+                      <img class="testimonials_slide-dots" src="./images/dots-2.svg" alt=""
+                        width="460" height="460" aria-hidden="true">
+                      <img class="testimonials_slide-quote" src="./images/quote.svg" alt=""
+                        width="53" height="53" aria-hidden="true">
+                      <blockquote class="testimonials_slide-text">
+                        <p>From start to finish, the service was
+                          outstanding. They handled our complete bathroom renovation with such care
+                          and
+                          precision. The quality of workmanship exceeded our expectations, and they
+                          were
+                          always transparent about timelines and costs.</p>
+                      </blockquote>
+                      <footer class="testimonials_slide-author">
+                        <p>Emma Richardson</p>
+                        <span>Fulham</span>
+                      </footer>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="testimonials_slide">
+                      <img class="testimonials_slide-dots" src="./images/dots-2.svg" alt=""
+                        width="460" height="460" aria-hidden="true">
+                      <img class="testimonials_slide-quote" src="./images/quote.svg" alt=""
+                        width="53" height="53" aria-hidden="true">
+                      <blockquote class="testimonials_slide-text">
+                        <p>Enjoy Renovation transformed our outdated
+                          Victorian kitchen into a stunning
+                          modern space. The team was professional, reliable, and completed the work
+                          exactly
+                          on schedule. The attention to detail was exceptional, and they managed
+                          everything
+                          so we didn't have to worry about a thing.</p>
+                      </blockquote>
+                      <footer class="testimonials_slide-author">
+                        <p>Sarah & Michael</p>
+                        <span>Clapham</span>
+                      </footer>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article class="testimonials_slide">
+                      <img class="testimonials_slide-dots" src="./images/dots-2.svg" alt=""
+                        width="460" height="460" aria-hidden="true">
+                      <img class="testimonials_slide-quote" src="./images/quote.svg" alt=""
+                        width="53" height="53" aria-hidden="true">
+                      <blockquote class="testimonials_slide-text">
+                        <p>From start to finish, the service was
+                          outstanding. They handled our complete bathroom renovation with such care
+                          and
+                          precision. The quality of workmanship exceeded our expectations, and they
+                          were
+                          always transparent about timelines and costs.</p>
+                      </blockquote>
+                      <footer class="testimonials_slide-author">
+                        <p>Emma Richardson</p>
+                        <span>Fulham</span>
+                      </footer>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonials_slider-buttons">
+              <button type="button" class="swiper-button-prev" aria-label="Previous testimonial">
+                <img src="./images/arrow-right.svg" alt="" aria-hidden="true">
+              </button>
+              <button type="button" class="swiper-button-next" aria-label="Next testimonial">
+                <img src="./images/arrow-right.svg" alt="" aria-hidden="true">
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact">
+        <img class="contact_bg" src="./images/dots-3.png" alt="" width="714" height="714"
+          aria-hidden="true">
+        <div class="container">
+          <div class="contact_inner">
+            <div class="contact_content">
+              <h2 class="section-title scroll-animate--slide-up">Get in touch</h2>
+              <div class="contact_items">
+                <div class="contact_item scroll-animate--slide-up">
+                  <img src="./images/mail.svg" alt="" aria-hidden="true">
+                  <div class="contact_item-content">
+                    <p>Email</p>
+                    <a href="mailto:Vitalii@enjoyrenovation.co.uk">Vitalii@enjoyrenovation.co.uk</a>
+                  </div>
+                </div>
+                <div class="contact_item scroll-animate--slide-up">
+                  <img src="./images/call.svg" alt="" aria-hidden="true">
+                  <div class="contact_item-content">
+                    <p>Phone number</p>
+                    <a href="tel:+447508094795">+44 750 809 4795</a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact_founders">
+                <div class="contact_founder scroll-animate--fade-in">
+                  <img class="contact_founder-image" src="./images/director-1.png" alt=""
+                    aria-hidden="true">
+                  <div class="contact_founder-content">
+                    <p>Vitaliy Sydora</p>
+                    <span>Director</span>
+                  </div>
+                </div>
+                <div class="contact_founder scroll-animate--fade-in">
+                  <img src="./images/director-2.png" alt="" aria-hidden="true">
+                  <div class="contact_founder-content">
+                    <p>Roman Semko</p>
+                    <span>Marketing Director</span>
+                  </div>
+                </div>
+              </div>
+              <div class="contact_media scroll-animate--fade-in">
+                <span>Follow us:</span>
+                <div class="contact_media-items">
+                  <a href="#" class="contact_media-item" target="_blank" rel="noopener noreferrer"
+                    aria-label="Follow us on Instagram">
+                    <img src="./images/instagram.svg" alt="" aria-hidden="true">
+                  </a>
+                  <a href="#" class="contact_media-item" target="_blank" rel="noopener noreferrer"
+                    aria-label="Follow us on Facebook">
+                    <img src="./images/facebook.svg" alt="" aria-hidden="true">
+                  </a>
+                  <a href="#" class="contact_media-item" target="_blank" rel="noopener noreferrer"
+                    aria-label="Follow us on LinkedIn">
+                    <img src="./images/linkedin.svg" alt="" aria-hidden="true">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="contact_form scroll-animate--slide-left">
+              <h3 class="contact_form-title">Send a message</h3>
+              <form action="#" class="contact_form-body">
+                <div class="contact_form-inputs">
+                  <label for="contact-name">
+                    <input type="text" id="contact-name" name="name" placeholder="Name" required>
+                  </label>
+                  <label for="contact-email">
+                    <input type="email" id="contact-email" name="email" placeholder="Email"
+                      required>
+                  </label>
+                  <label for="contact-phone">
+                    <input type="tel" id="contact-phone" name="phone" placeholder="Phone Number">
+                  </label>
+                  <label for="contact-postcode">
+                    <input type="text" id="contact-postcode" name="postcode" placeholder="Postcode">
+                  </label>
+                  <label for="contact-photo" id="contact-photo-label">
+                    <input type="file" id="contact-photo" name="photo" accept="image/*"
+                      aria-label="Photo of the floor before">
+                    <span class="contact_form-file-text">Photo of the floor before</span>
+                    <span class="contact_form-file-name" aria-live="polite"></span>
+                    <span class="contact_form-file-button">Upload</span>
+                  </label>
+                  <label for="contact-comment" id="contact-comment-label">
+                    <textarea id="contact-comment" name="comment" placeholder="Comment"></textarea>
+                  </label>
+                </div>
+                <label class="contact_form-checkbox" for="checkbox"><input type="checkbox"
+                    id="checkbox">Lorem ipsum dolor sit amet</label>
+                <button type="submit" class="btn btn_primary">Send message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {{> footer }}
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script type="module" src="/js/main.js"></script>
 </body>
